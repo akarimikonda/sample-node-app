@@ -18,6 +18,6 @@ COPY views .
 COPY app.js .
 COPY index.js .
 
-CMD ["node", "index.js"]
+CMD ["node", "start"]
 
 EXPOSE 8000
