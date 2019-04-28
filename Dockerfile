@@ -11,10 +11,10 @@ RUN npm install
 
 # Bundle app source
 #COPY . .
-COPY habitat .
-COPY public .
-COPY routes .
-COPY views .
+COPY habitat /app/habitat
+COPY public /app/public
+COPY routes /app/routes
+COPY views /app/views
 COPY app.js .
 COPY index.js .
 
