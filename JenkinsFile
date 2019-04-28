@@ -1,0 +1,20 @@
+node {
+
+stage('clone repo') {
+    git credentialsId: 'GIT', url: 'https://github.com/akarimikonda/sample-node-app.git'
+}
+
+stage('build docker image') {
+    // some block
+    app = docker.build("akarimikonda/habitat:${env.BUILD_NUMBER}")
+}
+
+stage('push image') {
+    // some block
+    
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
+        app.push()
+}
+
+}
+}

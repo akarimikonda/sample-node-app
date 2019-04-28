@@ -1,0 +1,11 @@
+---
+- name: Create a container from image
+  hosts: remote-server
+  tasks:
+    - name: Create a container
+      docker_container:
+        name: habitat
+        image: akarimikonda/habitat:11
+        exposed_ports:
+          - 8000
+       # state: present
